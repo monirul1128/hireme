@@ -20,18 +20,36 @@ In `sitemap.xml`, update the `<lastmod>` dates to reflect when you last updated 
 ### 3. Add Open Graph Image
 Create an `og-image.jpg` file (recommended size: 1200x630px) and upload it to your server, then update the URL in `index.html` line 16.
 
-## How to Submit to Google
+## How to Submit to Google (Updated Method)
 
-### Method 1: Google Search Console
+### Google Search Console (Recommended Method)
 1. Go to [Google Search Console](https://search.google.com/search-console)
 2. Add your property (website)
 3. Verify ownership (usually via HTML file or DNS record)
 4. Go to "Sitemaps" section
-5. Submit your sitemap URL: `https://yourdomain.com/sitemap.xml`
+5. Submit your sitemap URL: `https://topdigitalservice.shop/sitemap.xml`
 
-### Method 2: Direct Submission
-You can also submit your sitemap directly to Google by visiting:
-`https://www.google.com/ping?sitemap=https://yourdomain.com/sitemap.xml`
+**Note:** The old sitemap ping method (`https://www.google.com/ping?sitemap=...`) has been deprecated by Google and should not be used.
+
+## Troubleshooting 404 Errors
+
+### If you get a 404 error when accessing your sitemap:
+
+1. **Check if your website is live:**
+   - Visit `https://topdigitalservice.shop` in your browser
+   - Make sure the site is accessible
+
+2. **Verify file deployment:**
+   - Ensure `sitemap.xml` and `robots.txt` are uploaded to your web server
+   - Check that they're in the root directory of your website
+
+3. **Test sitemap accessibility:**
+   - Try accessing: `https://topdigitalservice.shop/sitemap.xml`
+   - Try accessing: `https://topdigitalservice.shop/robots.txt`
+
+4. **Check hosting configuration:**
+   - Some hosting providers require specific file permissions
+   - Ensure files are publicly accessible
 
 ## Additional SEO Tips
 
@@ -112,9 +130,11 @@ The sitemap includes:
 - **Domain mismatch**: Make sure all URLs use the same domain
 - **Invalid XML**: Validate your sitemap at [xml-sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 - **Missing pages**: Add any new pages to your sitemap
+- **404 errors**: Ensure your website is live and files are properly deployed
 
 ## Resources
 
 - [Google Search Console Help](https://support.google.com/webmasters/)
 - [Sitemap Guidelines](https://developers.google.com/search/docs/advanced/sitemaps/overview)
-- [SEO Starter Guide](https://developers.google.com/search/docs/beginner/seo-starter-guide) 
+- [SEO Starter Guide](https://developers.google.com/search/docs/beginner/seo-starter-guide)
+- [Sitemap Deprecation Notice](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping) 
