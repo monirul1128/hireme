@@ -6,7 +6,7 @@ Sitemap: https://topdigitalservice.shop/sitemap.xml
 
 # Disallow any private or admin areas (if you add them later)
 # Disallow: /admin/
-# Disallow: /private/
+# Disallow: /priva
 
 # Allow all CSS, JS, and image files
 Allow: /*.css$
