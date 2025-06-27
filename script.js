@@ -42,25 +42,36 @@ function handleScroll() {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 100;
+    let currentSection = '';
 
+    // Find the current section
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
         
         if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            // Remove active class from all links
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Add active class to corresponding links
-            const activeLinks = document.querySelectorAll(`[href="#${sectionId}"]`);
-            activeLinks.forEach(link => {
-                link.classList.add('active');
-            });
+            currentSection = sectionId;
         }
     });
+
+    // If we're at the very top, set home as active
+    if (scrollPos < 100) {
+        currentSection = 'home';
+    }
+
+    // Remove active class from all links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Add active class to corresponding links
+    if (currentSection) {
+        const activeLinks = document.querySelectorAll(`[href="#${currentSection}"]`);
+        activeLinks.forEach(link => {
+            link.classList.add('active');
+        });
+    }
 }
 
 // Smooth scrolling for navigation links
@@ -199,33 +210,30 @@ function handleContactForm(e) {
             submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
             setTimeout(() => {
                 submitBtn.textContent = originalText;
-                submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
                 submitBtn.disabled = false;
+                submitBtn.style.background = '';
                 form.reset();
             }, 3000);
         })
-        .catch((error) => {
-            console.error('EmailJS Error:', error);
-            alert("Failed to send message.");
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+        .catch(() => {
+            submitBtn.textContent = 'Error! Try Again';
+            submitBtn.style.background = 'linear-gradient(135deg, #e74c3c, #c0392b)';
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
         });
 }
 
-
-// Add ripple effect styles dynamically
+// Add ripple effect styles
 function addRippleStyles() {
     const style = document.createElement('style');
     style.textContent = `
-        .cta-button, .mobile-cta-button, .hero-cta, .submit-btn {
-            position: relative;
-            overflow: hidden;
-        }
-        
         .ripple {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.3);
             transform: scale(0);
             animation: ripple-animation 0.6s linear;
             pointer-events: none;
@@ -252,34 +260,12 @@ function addRippleStyles() {
     document.head.appendChild(style);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    addRippleStyles();
-  
-    const button = document.querySelector('.cta-button');
-    if (button) {
-      button.addEventListener('click', function (event) {
-        // Add ripple animation
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple');
-        ripple.style.left = `${event.offsetX}px`;
-        ripple.style.top = `${event.offsetY}px`;
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-  
-        // Open WhatsApp chat
-        const phoneNumber = '+8801625976726';
-        const message = encodeURIComponent("Hello! I'd like to chat with you.");
-        const url = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${message}`;
-        window.open(url, '_blank');
-      });
-    }
-  });
-  
-
 // Initialize all event listeners
 function initEventListeners() {
     // Mobile menu toggle
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
     
     // Navigation links
     navLinks.forEach(link => {
@@ -313,14 +299,14 @@ function initEventListeners() {
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!header.contains(e.target) && mobileMenu.classList.contains('active')) {
+        if (header && !header.contains(e.target) && mobileMenu && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
     
     // Handle window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+        if (window.innerWidth > 768 && mobileMenu && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
@@ -328,18 +314,20 @@ function initEventListeners() {
 
 // Add loading animation
 function addLoadingAnimation() {
-    const headerElements = header.querySelectorAll('.header-container > *');
-    
-    headerElements.forEach((element, index) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
+    if (header) {
+        const headerElements = header.querySelectorAll('.header-container > *');
         
-        setTimeout(() => {
-            element.style.transition = 'all 0.6s ease';
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
+        headerElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                element.style.transition = 'all 0.6s ease';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    }
 }
 
 // Initialize skill bars with data attributes
@@ -390,21 +378,6 @@ function addDesktopHoverEffects() {
     }
 }
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    addRippleStyles();
-    initEventListeners();
-    addLoadingAnimation();
-    initializeSkillBars();
-    addDesktopHoverEffects();
-    
-    // Set initial active state
-    updateActiveNavLink();
-    
-    // Trigger skill bar animation on initial load
-    setTimeout(animateSkillBars, 1000);
-});
-
 // Add intersection observer for animations
 function addScrollAnimations() {
     const observerOptions = {
@@ -431,5 +404,38 @@ function addScrollAnimations() {
     });
 }
 
-// Initialize scroll animations
-document.addEventListener('DOMContentLoaded', addScrollAnimations); 
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    addRippleStyles();
+    initEventListeners();
+    addLoadingAnimation();
+    initializeSkillBars();
+    addDesktopHoverEffects();
+    addScrollAnimations();
+    
+    // Set initial active state
+    updateActiveNavLink();
+    
+    // Trigger skill bar animation on initial load
+    setTimeout(animateSkillBars, 1000);
+    
+    // Handle WhatsApp CTA button
+    const whatsappButton = document.querySelector('.cta-button');
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', function (event) {
+            // Add ripple animation
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            ripple.style.left = `${event.offsetX}px`;
+            ripple.style.top = `${event.offsetY}px`;
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+      
+            // Open WhatsApp chat
+            const phoneNumber = '+8801625976726';
+            const message = encodeURIComponent("Hello! I'd like to chat with you.");
+            const url = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${message}`;
+            window.open(url, '_blank');
+        });
+    }
+}); 
