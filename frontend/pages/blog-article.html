@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রতিটি ওয়েবসাইটের জন্য ১০টি অপরিহার্য WordPress প্লাগইন - WebCraft Studio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="আপনার ওয়েবসাইটের কার্যকারিতা, নিরাপত্তা এবং পারফরম্যান্স বাড়াতে সাহায্য করবে এমন অপরিহার্য WordPress প্লাগইনগুলি আবিষ্কার করুন।">
+    <meta name="keywords" content="WordPress plugins, web development, SEO optimization, website security, performance">
+    <meta name="author" content="Monirul Islam">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="প্রতিটি ওয়েবসাইটের জন্য ১০টি অপরিহার্য WordPress প্লাগইন">
+    <meta property="og:description" content="আপনার ওয়েবসাইটের কার্যকারিতা, নিরাপত্তা এবং পারফরম্যান্স বাড়াতে সাহায্য করবে এমন অপরিহার্য WordPress প্লাগইনগুলি।">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://topdigitalservice.shop/blog-article.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://topdigitalservice.shop/blog-article.html">
+
+    <style>
+        /* Blog Article Specific Styles */
+        .blog-article {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center/cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .article-header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .article-date,
+        .article-author,
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .article-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .article-body {
+            padding: 50px 40px;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-body h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 40px 0 20px;
+            font-weight: 600;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .article-body ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .article-body li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .plugin-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .plugin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .plugin-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .plugin-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .plugin-info h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+
+        .plugin-info p {
+            color: #7f8c8d;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .plugin-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .plugin-features li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .plugin-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-box li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .highlight-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+
+        .article-footer {
+            background: #f8f9fa;
+            padding: 40px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .article-tags .tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .article-tags .tag:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .article-share {
+            border-top: 1px solid #e9ecef;
+            padding-top: 30px;
+        }
+
+        .article-share h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.whatsapp { background: #25d366; }
+
+        .article-author-bio {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .author-details h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .author-details p {
+            color: #7f8c8d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .back-to-blog {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            z-index: 100;
+        }
+
+        .back-to-blog:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-article {
+                padding: 100px 0 60px;
+            }
+
+            .article-container {
+                margin: 0 20px;
+                border-radius: 15px;
+            }
+
+            .article-header {
+                padding: 40px 25px 30px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .article-body {
+                padding: 30px 25px;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.2rem;
+            }
+
+            .back-to-blog {
+                position: static;
+                margin: 20px;
+                display: inline-block;
+            }
+
+            .plugin-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .share-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-header {
+                padding: 30px 20px 25px;
+            }
+
+            .article-body {
+                padding: 25px 20px;
+            }
+
+            .article-footer {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../../index.html">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../../index.html#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#blog" class="nav-link active">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <button class="cta-button">Contact US Whatsapp</button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#home" class="mobile-nav-link">Home</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#about" class="mobile-nav-link">About</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#services" class="mobile-nav-link">Services</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#portfolio" class="mobile-nav-link">Portfolio</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#skills" class="mobile-nav-link">Skills</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#blog" class="mobile-nav-link active">Blog</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#contact" class="mobile-nav-link">Contact</a>
+                </li>
+            </ul>
+            <button class="mobile-cta-button">Contact US Whatsapp</button>
+        </div>
+    </header>
+
+    <!-- Back to Blog Button -->
+    <a href="all-articles.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        Back to Blog
+    </a>
+
+    <!-- Blog Article -->
+    <main class="blog-article">
+        <article class="article-container">
+            <!-- Article Header -->
+            <header class="article-header">
+                <span class="article-category">WordPress</span>
+                <h1 class="article-title">প্রতিটি ওয়েবসাইটের জন্য ১০টি অপরিহার্য WordPress প্লাগইন</h1>
+                <div class="article-meta">
+                    <span class="article-date">
+                        <i class="fas fa-calendar"></i>
+                        জানুয়ারি ১৫, ২০২৪
+                    </span>
+                    <span class="article-author">
+                        <i class="fas fa-user"></i>
+                        Monirul Islam
+                    </span>
+                    <span class="read-time">
+                        <i class="fas fa-clock"></i>
+                        ৮ মিনিট পড়া
+                    </span>
+                </div>
+                <p class="article-excerpt">
+                    আপনার ওয়েবসাইটের কার্যকারিতা, নিরাপত্তা এবং পারফরম্যান্স বাড়াতে সাহায্য করবে এমন অপরিহার্য WordPress প্লাগইনগুলি আবিষ্কার করুন।
+                </p>
+            </header>
+
+            <!-- Article Body -->
+            <div class="article-body">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="WordPress Development" class="article-image">
+
+                <p>
+                    WordPress হল বিশ্বের সবচেয়ে জনপ্রিয় CMS (Content Management System), এবং এর সাফল্যের একটি বড় কারণ হল এর বিশাল প্লাগইন ইকোসিস্টেম। আজ আমরা এমন ১০টি অপরিহার্য প্লাগইন নিয়ে আলোচনা করব যা প্রতিটি WordPress ওয়েবসাইটের জন্য প্রয়োজনীয়।
+                </p>
+
+                <h2>১. Yoast SEO - সার্চ ইঞ্জিন অপটিমাইজেশন</h2>
+                
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Yoast SEO</h4>
+                            <p>সবচেয়ে জনপ্রিয় SEO প্লাগইন</p>
+                        </div>
+                    </div>
+                    <p>Yoast SEO হল WordPress এর জন্য সবচেয়ে জনপ্রিয় SEO প্লাগইন। এটি আপনার ওয়েবসাইটকে সার্চ ইঞ্জিনের জন্য অপটিমাইজ করতে সাহায্য করে।</p>
+                    <ul class="plugin-features">
+                        <li>মেটা টাইটেল এবং ডেস্ক্রিপশন অপটিমাইজেশন</li>
+                        <li>XML সাইটম্যাপ জেনারেশন</li>
+                        <li>সোশ্যাল মিডিয়া ইন্টিগ্রেশন</li>
+                        <li>রিডেবিলিটি স্কোর</li>
+                        <li>ফোকাস কীওয়ার্ড অপটিমাইজেশন</li>
+                    </ul>
+                </div>
+
+                <h2>২. Wordfence Security - নিরাপত্তা</h2>
+                
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="Website Security" class="article-image">
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Wordfence Security</h4>
+                            <p>ওয়েবসাইট নিরাপত্তার জন্য সেরা প্লাগইন</p>
+                        </div>
+                    </div>
+                    <p>Wordfence Security আপনার WordPress সাইটকে হ্যাকার, ম্যালওয়্যার এবং অন্যান্য নিরাপত্তা হুমকি থেকে রক্ষা করে।</p>
+                    <ul class="plugin-features">
+                        <li>রিয়েল-টাইম থ্রেট প্রিভেনশন</li>
+                        <li>ম্যালওয়্যার স্ক্যানিং</li>
+                        <li>ফায়ারওয়্যাল প্রটেকশন</li>
+                        <li>লগইন সিকিউরিটি</li>
+                        <li>টু-ফ্যাক্টর অথেনটিকেশন</li>
+                    </ul>
+                </div>
+
+                <h2>৩. WP Rocket - পারফরম্যান্স</h2>
+                
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>WP Rocket</h4>
+                            <p>ওয়েবসাইট স্পিড অপটিমাইজেশন</p>
+                        </div>
+                    </div>
+                    <p>WP Rocket হল একটি প্রিমিয়াম ক্যাশিং প্লাগইন যা আপনার ওয়েবসাইটের লোডিং স্পিড উল্লেখযোগ্যভাবে বাড়ায়।</p>
+                    <ul class="plugin-features">
+                        <li>পেজ ক্যাশিং</li>
+                        <li>ইমেজ অপটিমাইজেশন</li>
+                        <li>CSS এবং JavaScript মিনিফিকেশন</li>
+                        <li>লেজি লোডিং</li>
+                        <li>CDN ইন্টিগ্রেশন</li>
+                    </ul>
+                </div>
+
+                <h2>৪. Contact Form 7 - যোগাযোগ ফর্ম</h2>
+                
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80" alt="Contact Form" class="article-image">
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Contact Form 7</h4>
+                            <p>সহজ এবং কার্যকর যোগাযোগ ফর্ম</p>
+                        </div>
+                    </div>
+                    <p>Contact Form 7 হল একটি বিনামূল্যে প্লাগইন যা আপনাকে সহজেই কাস্টম যোগাযোগ ফর্ম তৈরি করতে দেয়।</p>
+                    <ul class="plugin-features">
+                        <li>সহজ ফর্ম বিল্ডার</li>
+                        <li>মেইল নোটিফিকেশন</li>
+                        <li>স্প্যাম প্রটেকশন</li>
+                        <li>কাস্টম স্টাইলিং</li>
+                        <li>মাল্টিপল ফর্ম সাপোর্ট</li>
+                    </ul>
+                </div>
+
+                <h2>৫. UpdraftPlus - ব্যাকআপ</h2>
+                
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>UpdraftPlus</h4>
+                            <p>ওয়েবসাইট ব্যাকআপ এবং রিস্টোর</p>
+                        </div>
+                    </div>
+                    <p>UpdraftPlus হল বিশ্বের সবচেয়ে জনপ্রিয় WordPress ব্যাকআপ প্লাগইন। এটি আপনার ওয়েবসাইটের নিয়মিত ব্যাকআপ নেয়।</p>
+                    <ul class="plugin-features">
+                        <li>অটোমেটিক ব্যাকআপ</li>
+                        <li>ক্লাউড স্টোরেজ সাপোর্ট</li>
+                        <li>ওয়ান-ক্লিক রিস্টোর</li>
+                        <li>মাইগ্রেশন টুল</li>
+                        <li>ফাইল এবং ডাটাবেস ব্যাকআপ</li>
+                    </ul>
+                </div>
+
+                <h2>৬. Elementor - পেজ বিল্ডার</h2>
+                
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Page Builder" class="article-image">
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Elementor</h4>
+                            <p>ড্র্যাগ-এন্ড-ড্রপ পেজ বিল্ডার</p>
+                        </div>
+                    </div>
+                    <p>Elementor হল একটি শক্তিশালী পেজ বিল্ডার যা আপনাকে কোডিং ছাড়াই সুন্দর ওয়েবসাইট তৈরি করতে দেয়।</p>
+                    <ul class="plugin-features">
+                        <li>ড্র্যাগ-এন্ড-ড্রপ ইন্টারফেস</li>
+                        <li>রিয়েল-টাইম প্রিভিউ</li>
+                        <li>প্রিমিয়াম উইজেট</li>
+                        <li>থিম বিল্ডার</li>
+                        <li>রেসপন্সিভ ডিজাইন</li>
+                    </ul>
+                </div>
+
+                <h2>৭. WooCommerce - ই-কমার্স</h2>
+                
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>WooCommerce</h4>
+                            <p>WordPress এর জন্য ই-কমার্স সলিউশন</p>
+                        </div>
+                    </div>
+                    <p>WooCommerce হল বিশ্বের সবচেয়ে জনপ্রিয় ই-কমার্স প্লাগইন যা আপনার WordPress সাইটকে একটি সম্পূর্ণ অনলাইন স্টোরে পরিণত করে।</p>
+                    <ul class="plugin-features">
+                        <li>প্রোডাক্ট ম্যানেজমেন্ট</li>
+                        <li>পেমেন্ট গেটওয়ে ইন্টিগ্রেশন</li>
+                        <li>শিপিং অপশন</li>
+                        <li>ইনভেন্টরি ট্র্যাকিং</li>
+                        <li>অর্ডার ম্যানেজমেন্ট</li>
+                    </ul>
+                </div>
+
+                <h2>৮. Google Analytics - অ্যানালিটিক্স</h2>
+                
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Analytics" class="article-image">
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Google Analytics</h4>
+                            <p>ওয়েবসাইট ট্রাফিক ট্র্যাকিং</p>
+                        </div>
+                    </div>
+                    <p>Google Analytics প্লাগইন আপনার ওয়েবসাইটের ভিজিটর, ট্রাফিক সোর্স এবং অন্যান্য গুরুত্বপূর্ণ ডেটা ট্র্যাক করে।</p>
+                    <ul class="plugin-features">
+                        <li>রিয়েল-টাইম রিপোর্ট</li>
+                        <li>অডিয়েন্স ইনসাইট</li>
+                        <li>বিহেভিয়ার ট্র্যাকিং</li>
+                        <li>কনভার্শন ট্র্যাকিং</li>
+                        <li>ই-কমার্স ট্র্যাকিং</li>
+                    </ul>
+                </div>
+
+                <h2>৯. Akismet - স্প্যাম প্রটেকশন</h2>
+                
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>Akismet</h4>
+                            <p>স্প্যাম কমেন্ট ফিল্টার</p>
+                        </div>
+                    </div>
+                    <p>Akismet হল WordPress এর ডিফল্ট স্প্যাম ফিল্টার যা আপনার সাইটে স্প্যাম কমেন্ট এবং ট্র্যাকব্যাক ব্লক করে।</p>
+                    <ul class="plugin-features">
+                        <li>অটোমেটিক স্প্যাম ডিটেকশন</li>
+                        <li>কমেন্ট মডারেশন</li>
+                        <li>ট্র্যাকব্যাক প্রটেকশন</li>
+                        <li>স্ট্যাটিসটিক্স ড্যাশবোর্ড</li>
+                        <li>API ইন্টিগ্রেশন</li>
+                    </ul>
+                </div>
+
+                <h2>১০. WPForms Lite - ফর্ম বিল্ডার</h2>
+                
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Form Builder" class="article-image">
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h4>WPForms Lite</h4>
+                            <p>ইউজার-ফ্রেন্ডলি ফর্ম বিল্ডার</p>
+                        </div>
+                    </div>
+                    <p>WPForms Lite হল একটি সহজ এবং শক্তিশালী ফর্ম বিল্ডার যা আপনাকে মিনিটের মধ্যে সুন্দর ফর্ম তৈরি করতে দেয়।</p>
+                    <ul class="plugin-features">
+                        <li>ড্র্যাগ-এন্ড-ড্রপ বিল্ডার</li>
+                        <li>প্রিমেড টেমপ্লেট</li>
+                        <li>স্প্যাম প্রটেকশন</li>
+                        <li>ইমেইল নোটিফিকেশন</li>
+                        <li>মোবাইল-ফ্রেন্ডলি</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>💡 গুরুত্বপূর্ণ টিপস</h3>
+                    <ul>
+                        <li>শুধুমাত্র প্রয়োজনীয় প্লাগইন ইনস্টল করুন</li>
+                        <li>নিয়মিত প্লাগইন আপডেট করুন</li>
+                        <li>অব্যবহৃত প্লাগইন ডিলিট করুন</li>
+                        <li>প্রিমিয়াম প্লাগইনের জন্য লাইসেন্স কিনুন</li>
+                        <li>নিয়মিত ব্যাকআপ নিন</li>
+                    </ul>
+                </div>
+
+                <h2>উপসংহার</h2>
+                
+                <p>
+                    এই ১০টি প্লাগইন আপনার WordPress ওয়েবসাইটকে আরও শক্তিশালী, নিরাপদ এবং কার্যকর করে তুলবে। তবে মনে রাখবেন, বেশি প্লাগইন ইনস্টল করা মানেই ভালো নয়। শুধুমাত্র আপনার প্রয়োজন অনুযায়ী প্লাগইন ব্যবহার করুন এবং নিয়মিত আপডেট রাখুন।
+                </p>
+
+                <p>
+                    আপনি কি এই প্লাগইনগুলি ব্যবহার করছেন? আপনার অভিজ্ঞতা শেয়ার করুন কমেন্টে। যদি আপনার কোন প্রশ্ন থাকে, তাহলে অবশ্যই জানাবেন।
+                </p>
+            </div>
+
+            <!-- Article Footer -->
+            <footer class="article-footer">
+                <div class="article-tags">
+                    <a href="#" class="tag">WordPress</a>
+                    <a href="#" class="tag">প্লাগইন</a>
+                    <a href="#" class="tag">SEO</a>
+                    <a href="#" class="tag">নিরাপত্তা</a>
+                    <a href="#" class="tag">পারফরম্যান্স</a>
+                    <a href="#" class="tag">ওয়েব ডেভেলপমেন্ট</a>
+                </div>
+
+                <div class="article-share">
+                    <h3>এই আর্টিকেল শেয়ার করুন</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </a>
+                        <a href="#" class="share-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+                        <a href="#" class="share-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="share-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="article-author-bio">
+                    <div class="author-info">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <h4>Monirul Islam</h4>
+                            <p>একজন অভিজ্ঞ ওয়েব ডেভেলপার এবং WordPress বিশেষজ্ঞ। ৬+ বছরের অভিজ্ঞতা নিয়ে তিনি বিভিন্ন ধরনের ওয়েবসাইট এবং ল্যান্ডিং পেজ তৈরি করে থাকেন। তিনি ওয়েব ডিজাইন, ডেভেলপমেন্ট এবং ডিজিটাল মার্কেটিং নিয়ে নিয়মিত ব্লগ লিখে থাকেন।</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../../index.html#home">Home</a>
+                    <a href="../../index.html#about">About</a>
+                    <a href="../../index.html#services">Services</a>
+                    <a href="../../index.html#portfolio">Portfolio</a>
+                    <a href="../../index.html#blog">Blog</a>
+                    <a href="../../index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="www.linkedin.com/in/monirul4213"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebCraft Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html> 

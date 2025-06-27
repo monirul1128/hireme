@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Articles - WebCraft Studio Blog</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse all articles about web design, WordPress development, SEO, and digital marketing. Expert insights and tutorials from WebCraft Studio.">
+    <meta name="keywords" content="web design articles, WordPress tutorials, SEO tips, web development blog">
+    <meta name="author" content="Monirul Islam">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="All Articles - WebCraft Studio Blog">
+    <meta property="og:description" content="Browse all articles about web design, WordPress development, SEO, and digital marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://topdigitalservice.shop/all-articles.html">
+    <meta property="og:image" content="https://topdigitalservice.shop/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://topdigitalservice.shop/all-articles.html">
+
+    <style>
+        /* All Articles Page Specific Styles */
+        .all-articles-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .filter-bar {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #95a5a6;
+            font-size: 1.1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-options select {
+            padding: 12px 20px;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
+            background: white;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .filter-options select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .article-excerpt {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        .article-meta i {
+            margin-right: 5px;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .pagination button {
+            padding: 12px 18px;
+            border: 2px solid #ecf0f1;
+            background: white;
+            color: #2c3e50;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .pagination button:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .pagination button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #bdc3c7;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .no-results p {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .all-articles-section {
+                padding: 100px 0 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: auto;
+            }
+
+            .filter-options {
+                justify-content: center;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .article-content {
+                padding: 20px;
+            }
+
+            .article-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .filter-bar {
+                padding: 20px;
+            }
+
+            .filter-options select {
+                min-width: 120px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../../index.html">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../../index.html#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#blog" class="nav-link active">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <button class="cta-button">Contact US Whatsapp</button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#home" class="mobile-nav-link">Home</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#about" class="mobile-nav-link">About</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#services" class="mobile-nav-link">Services</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#portfolio" class="mobile-nav-link">Portfolio</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#skills" class="mobile-nav-link">Skills</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#blog" class="mobile-nav-link active">Blog</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../../index.html#contact" class="mobile-nav-link">Contact</a>
+                </li>
+            </ul>
+            <button class="mobile-cta-button">Contact US Whatsapp</button>
+        </div>
+    </header>
+
+    <!-- All Articles Section -->
+    <main class="all-articles-section">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>All Articles</h1>
+                <p>Discover insights, tutorials, and tips about web design, development, and digital marketing</p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                </div>
+                <div class="filter-options">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="WordPress">WordPress</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="Development">Development</option>
+                        <option value="SEO">SEO</option>
+                        <option value="Landing Pages">Landing Pages</option>
+                        <option value="Design">Design</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Article cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be generated by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No articles found</h3>
+                <p>Try adjusting your search terms or filters</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../../index.html#home">Home</a>
+                    <a href="../../index.html#about">About</a>
+                    <a href="../../index.html#services">Services</a>
+                    <a href="../../index.html#portfolio">Portfolio</a>
+                    <a href="../../index.html#blog">Blog</a>
+                    <a href="../../index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="www.linkedin.com/in/monirul4213"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebCraft Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/articles.js"></script>
+</body>
+</html> 
