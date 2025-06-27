@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Builder - WebCraft Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- JSZip for export functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create stunning landing pages with our drag-and-drop builder. No coding required - design, customize, and publish your landing pages instantly.">
+    <meta name="keywords" content="landing page builder, drag and drop, website builder, no code, landing page creator">
+    <meta name="author" content="Monirul Islam">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Landing Page Builder - WebCraft Studio">
+    <meta property="og:description" content="Create stunning landing pages with our drag-and-drop builder. No coding required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://topdigitalservice.shop/landing-builder.html">
+    <meta property="og:image" content="https://topdigitalservice.shop/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://topdigitalservice.shop/landing-builder.html">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <button class="cta-button">Contact US Whatsapp</button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="index.html#home" class="mobile-nav-link">Home</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="index.html#about" class="mobile-nav-link">About</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="index.html#services" class="mobile-nav-link">Services</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="index.html#portfolio" class="mobile-nav-link">Portfolio</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#blog" class="mobile-nav-link">Blog</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                </li>
+            </ul>
+            <button class="mobile-cta-button">Contact US Whatsapp</button>
+        </div>
+    </header>
+
+    <!-- Landing Page Builder -->
+    <main class="landing-builder">
+        <!-- Builder Header -->
+        <div class="builder-header">
+            <div class="builder-controls">
+                <button class="btn btn-secondary" id="previewBtn">
+                    <i class="fas fa-eye"></i> Preview
+                </button>
+                <button class="btn btn-primary" id="saveBtn">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button class="btn btn-success" id="exportBtn">
+                    <i class="fas fa-download"></i> Export
+                </button>
+                <button class="btn btn-info" id="publishBtn">
+                    <i class="fas fa-rocket"></i> Publish
+                </button>
+            </div>
+            <div class="view-controls">
+                <button class="view-btn active" data-view="desktop">
+                    <i class="fas fa-desktop"></i> Desktop
+                </button>
+                <button class="view-btn" data-view="tablet">
+                    <i class="fas fa-tablet-alt"></i> Tablet
+                </button>
+                <button class="view-btn" data-view="mobile">
+                    <i class="fas fa-mobile-alt"></i> Mobile
+                </button>
+            </div>
+        </div>
+
+        <!-- Builder Interface -->
+        <div class="builder-interface">
+            <!-- Elements Sidebar -->
+            <div class="elements-sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-puzzle-piece"></i> Elements</h3>
+                </div>
+                <div class="elements-categories">
+                    <div class="category-section">
+                        <h4>Basic Elements</h4>
+                        <div class="element-item" draggable="true" data-element="heading">
+                            <i class="fas fa-heading"></i>
+                            <span>Heading</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="text">
+                            <i class="fas fa-paragraph"></i>
+                            <span>Text Block</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="button">
+                            <i class="fas fa-square"></i>
+                            <span>Button</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="image">
+                            <i class="fas fa-image"></i>
+                            <span>Image</span>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h4>Forms & Inputs</h4>
+                        <div class="element-item" draggable="true" data-element="form">
+                            <i class="fas fa-wpforms"></i>
+                            <span>Contact Form</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="input">
+                            <i class="fas fa-keyboard"></i>
+                            <span>Input Field</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="textarea">
+                            <i class="fas fa-align-left"></i>
+                            <span>Text Area</span>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h4>Layout Elements</h4>
+                        <div class="element-item" draggable="true" data-element="container">
+                            <i class="fas fa-square-full"></i>
+                            <span>Container</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="divider">
+                            <i class="fas fa-minus"></i>
+                            <span>Divider</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="spacer">
+                            <i class="fas fa-arrows-alt-v"></i>
+                            <span>Spacer</span>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h4>Advanced Elements</h4>
+                        <div class="element-item" draggable="true" data-element="video">
+                            <i class="fas fa-video"></i>
+                            <span>Video</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="testimonial">
+                            <i class="fas fa-quote-left"></i>
+                            <span>Testimonial</span>
+                        </div>
+                        <div class="element-item" draggable="true" data-element="counter">
+                            <i class="fas fa-calculator"></i>
+                            <span>Counter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canvas Area -->
+            <div class="canvas-area">
+                <div class="canvas-container" id="canvas">
+                    <div class="drop-zone">
+                        <div class="drop-message">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <h3>Drag elements here to build your landing page</h3>
+                            <p>Start by dragging elements from the sidebar to create your page</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Properties Panel -->
+            <div class="properties-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-cog"></i> Properties</h3>
+                </div>
+                <div class="panel-content" id="propertiesContent">
+                    <div class="no-selection">
+                        <i class="fas fa-hand-pointer"></i>
+                        <p>Select an element to edit its properties</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Modal -->
+        <div class="preview-modal" id="previewModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Page Preview</h3>
+                    <button class="close-btn" id="closePreview">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="preview-container" id="previewContainer">
+                        <!-- Preview content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Modal -->
+        <div class="export-modal" id="exportModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Export Landing Page</h3>
+                    <button class="close-btn" id="closeExport">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="export-options">
+                        <div class="export-option">
+                            <h4><i class="fas fa-file-code"></i> Download HTML/CSS</h4>
+                            <p>Get the complete landing page files</p>
+                            <button class="btn btn-primary" id="downloadHtml">Download Files</button>
+                        </div>
+                        <div class="export-option">
+                            <h4><i class="fas fa-link"></i> Get Live URL</h4>
+                            <p>Publish and get a live website link</p>
+                            <button class="btn btn-success" id="publishLive">Publish Live</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="index.html#blog">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="www.linkedin.com/in/monirul4213"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebCraft Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="landing-builder.js"></script>
+</body>
+</html> 
