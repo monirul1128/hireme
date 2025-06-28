@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Chat Test</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .connected { background: #d4edda; color: #155724; }
+        .disconnected { background: #f8d7da; color: #721c24; }
+        .messages {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f8f9fa;
+            margin: 20px 0;
+        }
+        input, button {
+            margin: 10px 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .network-info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Global Chat Server Test</h1>
+        
+        <div class="network-info">
+            <h3>Network Access Information:</h3>
+            <p><strong>Local Access:</strong> <a href="http://localhost:4000" target="_blank">http://localhost:4000</a></p>
+            <p><strong>Network Access:</strong> <a href="http://192.168.1.125:4000" target="_blank">http://192.168.1.125:4000</a></p>
+            <p><strong>Current Page:</strong> <span id="current-url"></span></p>
+        </div>
+        
+        <div id="status" class="status disconnected">❌ Disconnected</div>
+        
+        <div class="info">
+            <p><strong>Test Instructions:</strong></p>
+            <ol>
+                <li>Open this page on different devices (phone, tablet, other computers)</li>
+                <li>Enter your name and start chatting</li>
+                <li>Messages should appear in real-time across all devices</li>
+                <li>Check browser console for connection details</li>
+            </ol>
+        </div>
+        
+        <div class="messages" id="messages"></div>
+        
+        <div>
+            <input type="text" id="username" placeholder="Enter your name..." style="width: 200px;">
+            <input type="text" id="message" placeholder="Type a message..." style="width: 400px;">
+            <button onclick="sendMessage()">Send Message</button>
+        </div>
+        
+        <div class="info">
+            <p><strong>Connection Details:</strong></p>
+            <p id="connection-info">Connecting...</p>
+        </div>
+    </div>
+    
+    <script>
+        let socket;
+        let username = '';
+        
+        // Show current URL
+        document.getElementById('current-url').textContent = window.location.href;
+        
+        // Auto-detect server URL
+        function getChatServerUrl() {
+            const currentHost = window.location.hostname;
+            
+            if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
+                return 'http://localhost:4000';
+            }
+            
+            if (currentHost === '192.168.1.125' || currentHost.includes('192.168.')) {
+                return 'http://192.168.1.125:4000';
+            }
+            
+            return `http://${currentHost}:4000`;
+        }
+        
+        function updateStatus(message, isConnected) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${isConnected ? 'connected' : 'disconnected'}`;
+        }
+        
+        function addMessage(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            div.style.padding = '5px 0';
+            div.style.borderBottom = '1px solid #eee';
+            document.getElementById('messages').appendChild(div);
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+        }
+        
+        function updateConnectionInfo(info) {
+            document.getElementById('connection-info').textContent = info;
+        }
+        
+        // Initialize Socket.IO connection
+        function initializeChat() {
+            const serverUrl = getChatServerUrl();
+            console.log('🌐 Attempting to connect to:', serverUrl);
+            updateConnectionInfo(`Connecting to: ${serverUrl}`);
+            
+            socket = io(serverUrl, {
+                timeout: 5000,
+                reconnection: true,
+                reconnectionAttempts: 3,
+                reconnectionDelay: 1000,
+                transports: ['websocket', 'polling']
+            });
+            
+            socket.on('connect', () => {
+                console.log('✅ Connected to chat server:', serverUrl);
+                updateStatus('✅ Connected to Global Chat Server', true);
+                updateConnectionInfo(`Connected to: ${serverUrl} (Socket ID: ${socket.id})`);
+                addMessage('System: Connected to global chat server! 🌐');
+            });
+            
+            socket.on('connect_error', (error) => {
+                console.error('❌ Connection failed:', error);
+                updateStatus('❌ Connection Failed - Check server', false);
+                updateConnectionInfo(`Connection failed: ${error.message}`);
+                addMessage('System: Connection failed. Please check if the server is running.');
+            });
+            
+            socket.on('disconnect', (reason) => {
+                console.log('🔌 Disconnected:', reason);
+                updateStatus('🔌 Disconnected', false);
+                updateConnectionInfo(`Disconnected: ${reason}`);
+            });
+            
+            socket.on('reconnect', (attemptNumber) => {
+                console.log('🔄 Reconnected after', attemptNumber, 'attempts');
+                updateStatus('🔄 Reconnected', true);
+                updateConnectionInfo(`Reconnected after ${attemptNumber} attempts`);
+            });
+            
+            socket.on('chat message', (data) => {
+                addMessage(`${data.username}: ${data.msg}`);
+            });
+        }
+        
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const usernameInput = document.getElementById('username');
+            
+            if (!username) {
+                username = usernameInput.value.trim();
+                if (!username) {
+                    alert('Please enter your name first!');
+                    return;
+                }
+            }
+            
+            const message = messageInput.value.trim();
+            if (message && socket && socket.connected) {
+                socket.emit('chat message', {username: username, msg: message});
+                messageInput.value = '';
+            } else if (!socket || !socket.connected) {
+                alert('Not connected to chat server!');
+            }
+        }
+        
+        // Handle Enter key
+        document.getElementById('message').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Initialize chat when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeChat();
+        });
+    </script>
+</body>
+</html> 
