@@ -116,10 +116,10 @@ def index():
 def health():
     return jsonify({
         'status': 'healthy', 
-        'server': 'python-flask-waitress-production',
+        'server': 'python-flask-socketio-production',
         'environment': os.getenv('FLASK_ENV', 'production'),
         'platform': 'Windows',
-        'wsgi_server': 'Waitress',
+        'wsgi_server': 'Socket.IO',
         'timestamp': __import__('datetime').datetime.now().isoformat()
     })
 
@@ -130,7 +130,7 @@ def status():
         'version': '1.0.0',
         'environment': os.getenv('FLASK_ENV', 'production'),
         'platform': 'Windows',
-        'wsgi_server': 'Waitress',
+        'wsgi_server': 'Socket.IO',
         'port': os.getenv('PORT', 4000),
         'global_access': True
     })
@@ -174,23 +174,22 @@ def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
 def start_waitress_server():
-    """Start the Waitress production server"""
+    """Start the Socket.IO production server"""
     port = int(os.environ.get('PORT', 4000))
     host = '0.0.0.0'  # Listen on all interfaces for global access
     
     logger.info(f"🚀 Starting Windows Production Chat Server")
     logger.info(f"🌐 Host: {host}")
     logger.info(f"🔌 Port: {port}")
-    logger.info(f"📦 WSGI Server: Waitress")
+    logger.info(f"📦 Server: Socket.IO Production")
     logger.info(f"🌍 Global Access: Enabled")
     logger.info(f"🏭 Environment: Production")
     
     # Set production environment
     os.environ['FLASK_ENV'] = 'production'
-    os.environ['WERKZEUG_RUN_MAIN'] = 'true'
     
-    # Start Waitress server directly (no threading needed)
-    serve(app, host=host, port=port, threads=8, url_scheme='http')
+    # Start Socket.IO server (this handles both HTTP and WebSocket)
+    socketio.run(app, host=host, port=port, debug=False, use_reloader=False)
 
 if __name__ == '__main__':
     start_waitress_server() 
