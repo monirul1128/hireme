@@ -13,6 +13,12 @@ function getChatServerUrl() {
         return 'http://localhost:4000';
     }
     
+    // For network access, use the same IP but port 4000
+    // This ensures chat works when accessed from other devices on the network
+    if (currentHost === '192.168.1.125' || currentHost.includes('192.168.')) {
+        return 'http://192.168.1.125:4000';
+    }
+    
     // For production, use the same domain but port 4000
     // You can also set a specific chat server domain here
     return `${currentProtocol}//${currentHost}:4000`;
@@ -21,29 +27,43 @@ function getChatServerUrl() {
 // Initialize chat with error handling and fallback
 function initializeChat() {
     try {
-        const socket = io(getChatServerUrl(), {
-            timeout: 3000,
-            reconnection: false
+        const serverUrl = getChatServerUrl();
+        console.log('Attempting to connect to chat server:', serverUrl);
+        
+        const socket = io(serverUrl, {
+            timeout: 5000,
+            reconnection: true,
+            reconnectionAttempts: 3,
+            reconnectionDelay: 1000,
+            transports: ['websocket', 'polling']
         });
 
         socket.on('connect', () => {
-            console.log('Connected to chat server');
+            console.log('✅ Connected to chat server:', serverUrl);
             chatEnabled = true;
             fallbackMode = false;
             hideChatError();
         });
 
         socket.on('connect_error', (error) => {
-            console.error('Chat server connection failed:', error);
+            console.error('❌ Chat server connection failed:', error);
+            console.error('Server URL attempted:', serverUrl);
             chatEnabled = false;
             fallbackMode = true;
-            showChatError('Chat server unavailable. Using demo mode.');
+            showChatError(`Chat server unavailable (${serverUrl}). Using demo mode.`);
         });
 
-        socket.on('disconnect', () => {
-            console.log('Disconnected from chat server');
+        socket.on('disconnect', (reason) => {
+            console.log('🔌 Disconnected from chat server:', reason);
             chatEnabled = false;
             fallbackMode = true;
+        });
+
+        socket.on('reconnect', (attemptNumber) => {
+            console.log('🔄 Reconnected to chat server after', attemptNumber, 'attempts');
+            chatEnabled = true;
+            fallbackMode = false;
+            hideChatError();
         });
 
         return socket;

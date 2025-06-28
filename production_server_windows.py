@@ -30,7 +30,9 @@ socketio = SocketIO(app,
                    cors_allowed_origins="*",
                    async_mode='threading',
                    logger=False,
-                   engineio_logger=False)
+                   engineio_logger=False,
+                   ping_timeout=60,
+                   ping_interval=25)
 
 # Simple HTML template for testing
 HTML_TEMPLATE = """
@@ -38,7 +40,7 @@ HTML_TEMPLATE = """
 <html>
 <head>
     <title>Global Chat Server - Production</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
         .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
