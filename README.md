@@ -62,6 +62,11 @@ A comprehensive web design and development portfolio with real-time chat functio
    ```bash
    py production_server_windows.py
    ```
+   
+   Or use the Windows batch file:
+   ```bash
+   start.bat
+   ```
 
 3. **Access globally**
    - Local: `http://localhost:4000`
@@ -84,11 +89,15 @@ webcraft-studio/
 │   ├── css/                   # Stylesheets
 │   ├── js/                    # JavaScript files
 │   └── pages/                 # Demo pages
-├── backend/                   # Backend API (if needed)
-├── realtime-chat-server/      # Node.js chat server
+├── docs/                      # Documentation
 ├── production_server_windows.py # Windows production server
 ├── requirements_production.txt # Python dependencies
-└── README.md                  # This file
+├── start.bat                  # Windows startup script
+├── deploy-chat-server.bat     # Deployment script
+├── robots.txt                 # SEO robots file
+├── sitemap.xml               # SEO sitemap
+├── CNAME                     # Custom domain
+└── README.md                 # This file
 ```
 
 ## 🚀 Deployment Options
