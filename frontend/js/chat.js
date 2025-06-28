@@ -226,8 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (socket) {
         socket.on('chat message', (data) => {
+            console.log('Received chat message:', data); // Debug log
+            
             const msgDiv = document.createElement('div');
             msgDiv.className = 'chat-message';
+            
             if (typeof data === 'string') {
                 msgDiv.textContent = data;
             } else if (typeof data === 'object' && data !== null) {
@@ -237,7 +240,36 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 msgDiv.textContent = String(data);
             }
+            
+            // Add timestamp for better tracking
+            const timestamp = new Date().toLocaleTimeString();
+            msgDiv.setAttribute('data-timestamp', timestamp);
+            
             chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Debug: Log that message was added
+            console.log('Message added to chat:', msgDiv.textContent);
+        });
+        
+        // Add connection status logging
+        socket.on('connect', () => {
+            console.log('✅ Connected to chat server');
+            const statusDiv = document.createElement('div');
+            statusDiv.className = 'chat-message system-message';
+            statusDiv.textContent = '✅ Connected to chat server';
+            statusDiv.style.color = '#28a745';
+            chatMessages.appendChild(statusDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+        
+        socket.on('disconnect', () => {
+            console.log('❌ Disconnected from chat server');
+            const statusDiv = document.createElement('div');
+            statusDiv.className = 'chat-message system-message';
+            statusDiv.textContent = '❌ Disconnected from chat server';
+            statusDiv.style.color = '#dc3545';
+            chatMessages.appendChild(statusDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         });
     }
