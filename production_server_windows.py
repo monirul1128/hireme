@@ -29,8 +29,8 @@ CORS(app, origins=['*'])
 socketio = SocketIO(app, 
                    cors_allowed_origins="*",
                    async_mode='threading',
-                   logger=True,
-                   engineio_logger=True)
+                   logger=False,
+                   engineio_logger=False)
 
 # Simple HTML template for testing
 HTML_TEMPLATE = """
@@ -183,16 +183,14 @@ def start_waitress_server():
     logger.info(f"🔌 Port: {port}")
     logger.info(f"📦 WSGI Server: Waitress")
     logger.info(f"🌍 Global Access: Enabled")
+    logger.info(f"🏭 Environment: Production")
     
-    # Start Socket.IO in a separate thread
-    def run_socketio():
-        socketio.run(app, host=host, port=port, debug=False, use_reloader=False)
+    # Set production environment
+    os.environ['FLASK_ENV'] = 'production'
+    os.environ['WERKZEUG_RUN_MAIN'] = 'true'
     
-    socketio_thread = threading.Thread(target=run_socketio, daemon=True)
-    socketio_thread.start()
-    
-    # Start Waitress server
-    serve(app, host=host, port=port, threads=8)
+    # Start Waitress server directly (no threading needed)
+    serve(app, host=host, port=port, threads=8, url_scheme='http')
 
 if __name__ == '__main__':
     start_waitress_server() 
