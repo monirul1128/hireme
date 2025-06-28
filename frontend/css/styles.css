@@ -61,6 +61,7 @@ body {
     line-height: 1.6;
     color: var(--text-primary);
     overflow-x: hidden;
+    background-color: var(--bg-primary);
 }
 
 .container {
@@ -3940,3 +3941,4 @@ html {
         font-size: 14px;
     }
 }
+
