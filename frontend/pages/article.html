@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আর্টিকেল - WebCraft Studio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="WebCraft Studio এর আর্টিকেল পড়ুন। ওয়েব ডিজাইন, ডেভেলপমেন্ট এবং ডিজিটাল মার্কেটিং নিয়ে বিস্তারিত আলোচনা।">
+    <meta name="keywords" content="ওয়েব ডিজাইন, ডেভেলপমেন্ট, বাংলা আর্টিকেল, WebCraft Studio">
+    <meta name="author" content="Monirul Islam">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="আর্টিকেল - WebCraft Studio">
+    <meta property="og:description" content="WebCraft Studio এর আর্টিকেল পড়ুন।">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://topdigitalservice.shop/article.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="আর্টিকেল - WebCraft Studio">
+    <meta name="twitter:description" content="WebCraft Studio এর আর্টিকেল পড়ুন।">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .single-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .article-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--text-color);
+        }
+        
+        .article-excerpt {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .article-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .article-image {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary-color);
+        }
+        
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem 0;
+            color: var(--secondary-color);
+        }
+        
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .article-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .error-message {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .error-message h2 {
+            color: var(--error-color);
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .loading i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .single-article {
+                padding: 1rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .article-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../index.html">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">হোম</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#about" class="nav-link">আমাদের সম্পর্কে</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#services" class="nav-link">সেবাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#portfolio" class="nav-link">পোর্টফোলিও</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="all-articles.html" class="nav-link active">ব্লগ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">যোগাযোগ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <button class="cta-button">Contact US Whatsapp</button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="../index.html" class="mobile-nav-link">হোম</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../index.html#about" class="mobile-nav-link">আমাদের সম্পর্কে</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../index.html#services" class="mobile-nav-link">সেবাসমূহ</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../index.html#portfolio" class="mobile-nav-link">পোর্টফোলিও</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="all-articles.html" class="mobile-nav-link active">ব্লগ</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="../index.html#contact" class="mobile-nav-link">যোগাযোগ</a>
+                </li>
+            </ul>
+            <button class="mobile-cta-button">Contact US Whatsapp</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Loading state -->
+            <div id="loading" class="loading">
+                <i class="fas fa-spinner"></i>
+                <p>আর্টিকেল লোড হচ্ছে...</p>
+            </div>
+            
+            <!-- Article container -->
+            <div id="article-container" style="display: none;">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>WebCraft Studio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">হোম</a>
+                    <a href="../index.html#about">আমাদের সম্পর্কে</a>
+                    <a href="../index.html#services">সেবাসমূহ</a>
+                    <a href="../index.html#portfolio">পোর্টফোলিও</a>
+                    <a href="all-articles.html">ব্লগ</a>
+                    <a href="../index.html#contact">যোগাযোগ</a>
+                    <a href="admin-panel.html">অ্যাডমিন প্যানেল</a>
+                    <a href="article-dashboard.html">আর্টিকেল ড্যাশবোর্ড</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebCraft Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/articles.js"></script>
+    <script>
+        // Initialize article page
+        document.addEventListener('DOMContentLoaded', async function() {
+            const loading = document.getElementById('loading');
+            const articleContainer = document.getElementById('article-container');
+            
+            try {
+                await initializeArticlePage();
+                loading.style.display = 'none';
+                articleContainer.style.display = 'block';
+            } catch (error) {
+                console.error('Error initializing article page:', error);
+                loading.innerHTML = `
+                    <div class="error-message">
+                        <h2>ত্রুটি</h2>
+                        <p>আর্টিকেল লোড করতে সমস্যা হয়েছে।</p>
+                        <a href="all-articles.html" class="btn">সব আর্টিকেল দেখুন</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html> 
