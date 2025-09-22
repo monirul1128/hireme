@@ -1,679 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Designer & Developer - WordPress Expert</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional web designer and developer specializing in WordPress and landing page design. 6+ years experience creating high-converting websites.">
-    <meta name="keywords" content="web designer, web developer, WordPress expert, landing page design, frontend developer, custom website">
-    <meta name="author" content="Monirul Islam">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Web Designer & Developer - WordPress Expert">
-    <meta property="og:description" content="Professional web designer and developer specializing in WordPress and landing page design. 6+ years experience creating high-converting websites.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://topdigitalservice.shop/">
-    <meta property="og:image" content="https://topdigitalservice.shop/og-image.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Web Designer & Developer - WordPress Expert">
-    <meta name="twitter:description" content="Professional web designer and developer specializing in WordPress and landing page design.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://topdigitalservice.shop/">
-    
-    <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    
-    <link rel="stylesheet" href="frontend/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function() {
-        emailjs.init("ms4pEWmfLKsoK2A3p"); // Replace with your actual key
-    })();
-</script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Product – Landing Page</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #fff; color: #222; }
+    .hero { padding: 60px 20px 30px 20px; text-align: center; background: #f6f7fb; }
+    .hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .hero p { font-size: 1.2em; color: #555; }
+    .hero img { max-width: 320px; width: 100%; margin: 30px 0; border-radius: 10px; box-shadow: 0 2px 10px #0001; }
+    .cta-btn { background: #ff6600; color: #fff; padding: 16px 42px; font-size: 1.3em; border: none; border-radius: 6px; text-decoration: none; margin-top: 25px; display: inline-block; transition: background 0.2s; }
+    .cta-btn:hover { background: #e25500; }
+    .features { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+    .features ul { list-style: none; padding: 0; }
+    .features li { margin-bottom: 18px; font-size: 1.1em; }
+    .testimonials { background: #fffbe7; padding: 40px 20px; text-align: center; }
+    .testimonials blockquote { font-size: 1.15em; color: #333; margin: 0 auto 18px auto; border-left: 4px solid #ff6600; padding-left: 12px; max-width: 420px; }
+    .buy-section { text-align: center; padding: 48px 20px 30px 20px; background: #eafaf1; }
+    .buy-section h2 { margin-bottom: 12px; }
+    .faq { max-width: 600px; margin: 35px auto; padding: 0 20px; }
+    .faq details { margin-bottom: 14px; background: #f6f7fb; padding: 10px 18px; border-radius: 6px; }
+    footer { text-align: center; padding: 22px 10px; color: #aaa; font-size: 1em; background: #fafbfc; margin-top: 40px;}
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2em; }
+      .cta-btn { font-size: 1em; padding: 12px 24px;}
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#">
-                    <i class="fas fa-code"></i>
-                    <span>WebCraft Studio</span>
-                </a>
-            </div>
+  <section class="hero">
+    <h1>Amazing Product Name</h1>
+    <p>Revolutionize your daily life with our exclusive eCommerce product!</p>
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Product Image">
+    <br>
+    <a href="#buy" class="cta-btn">Buy Now</a>
+  </section>
 
-            <!-- Navigation Menu -->
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#blog" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✅ Feature 1: Top-quality materials for durability</li>
+      <li>✅ Feature 2: Modern design fits any lifestyle</li>
+      <li>✅ Feature 3: Fast, free worldwide shipping</li>
+    </ul>
+  </section>
 
-            <!-- CTA Button -->
-            <div class="header-cta">
-                <button class="cta-button">Contact US Whatsapp</button>
-            </div>
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <blockquote>
+      “Absolutely love this product! Fast shipping and great quality. Will buy again!”<br>
+      – <strong>Jane S.</strong>
+    </blockquote>
+    <blockquote>
+      “Exceeded my expectations. Highly recommend to anyone!”<br>
+      – <strong>John D.</strong>
+    </blockquote>
+  </section>
 
-            <!-- Mobile Menu Toggle -->
-            <div class="mobile-menu-toggle">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </div>
-        </div>
+  <section class="buy-section" id="buy">
+    <h2>Ready to Get Yours?</h2>
+    <p>Order today and receive an exclusive 10% discount – limited time only!</p>
+    <a href="#" class="cta-btn">Buy Now for $49.99</a>
+    <p style="margin-top:18px;color:#666;">(Secure checkout via your favorite payment method)</p>
+  </section>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <ul class="mobile-nav-list">
-                <li class="mobile-nav-item">
-                    <a href="#home" class="mobile-nav-link active">Home</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#about" class="mobile-nav-link">About</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#services" class="mobile-nav-link">Services</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#blog" class="mobile-nav-link">Blog</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#contact" class="mobile-nav-link">Contact</a>
-                </li>
-            </ul>
-            <button class="mobile-cta-button">Contact US Whatsapp</button>
-        </div>
-    </header>
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How fast is shipping?</summary>
+      <div>We ship within 1 business day. Delivery usually takes 3–7 days worldwide.</div>
+    </details>
+    <details>
+      <summary>Do you offer returns?</summary>
+      <div>Yes! We offer a 30-day money-back guarantee, no questions asked.</div>
+    </details>
+    <details>
+      <summary>Is my payment secure?</summary>
+      <div>Absolutely. All transactions are encrypted and processed by trusted gateways.</div>
+    </details>
+  </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Web Designer & Developer</h1>
-                    <p class="hero-subtitle">WordPress Landing Page Expert</p>
-                    <p class="hero-description">I create stunning, high-converting websites and landing pages using modern web technologies and WordPress. From concept to launch, I bring your digital vision to life with pixel-perfect design and clean, efficient code.</p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">150+</span>
-                            <span class="stat-label">Websites Built</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <button class="hero-cta primary">View My Work</button>
-                        <a href="frontend/pages/cv.html" class="hero-cta secondary">Download Portfolio</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <img src="https://i.pinimg.com/736x/59/a8/7a/59a87a255f7330240ec78f5d6b707c92.jpg" alt="Web Developer Profile" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-                        </div>
-                        <h3>Monirul Islam</h3>
-                        <p>Full-Stack Web Developer</p>
-                        <p class="specialty">WordPress & Landing Page Expert</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/monirul4213" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
-                            <a href="#"><i class="fab fa-behance"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                    <p>Passionate web designer and developer specializing in WordPress and landing page optimization</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Who I Am</h3>
-                        <p>I'm a full-stack web developer with over 6 years of experience creating beautiful, functional websites and high-converting landing pages. My expertise lies in WordPress development, custom theme creation, and designing landing pages that convert visitors into customers.</p>
-                        
-                        <h3>My Approach</h3>
-                        <p>I combine creative design thinking with technical expertise to deliver websites that not only look stunning but also perform exceptionally well. Every project starts with understanding your business goals and ends with a website that drives results.</p>
-                        
-                        <div class="about-features">
-                            <div class="feature">
-                                <i class="fas fa-palette"></i>
-                                <h4>Creative Design</h4>
-                                <p>Unique, modern designs that capture your brand essence</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-rocket"></i>
-                                <h4>Performance Focused</h4>
-                                <p>Fast, optimized websites that rank well and convert</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <div class="experience-card">
-                            <h3>Experience Highlights</h3>
-                            <div class="experience-item">
-                                <div class="exp-year">2023</div>
-                                <div class="exp-content">
-                                    <h4>Senior Web Developer</h4>
-                                    <p>Oxio Soft</p>
-                                </div>
-                            </div>
-                            <div class="experience-item">
-                                <div class="exp-year">2021</div>
-                                <div class="exp-content">
-                                    <h4>WordPress Specialist</h4>
-                                    <p>Digital Solutions Co.</p>
-                                </div>
-                            </div>
-                            <div class="experience-item">
-                                <div class="exp-year">2019</div>
-                                <div class="exp-content">
-                                    <h4>Frontend Developer</h4>
-                                    <p>WebCraft Studio</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="services-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>My Services</h2>
-                    <p>Comprehensive web design and development solutions for your business</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>Web Design</h3>
-                        <p>Custom, responsive website designs that look great on all devices and reflect your brand identity.</p>
-                        <ul class="service-features">
-                            <li>UI/UX Design</li>
-                            <li>Responsive Design</li>
-                            <li>Brand Integration</li>
-                            <li>User Experience Optimization</li>
-                        </ul>
-                        <a href="frontend/pages/web-design-demo.html" class="service-cta">View Demo</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fab fa-wordpress"></i>
-                        </div>
-                        <h3>WordPress Development</h3>
-                        <p>Custom WordPress themes, plugins, and full website development using the world's most popular CMS.</p>
-                        <ul class="service-features">
-                            <li>Custom Theme Development</li>
-                            <li>Plugin Development</li>
-                            <li>WordPress Optimization</li>
-                            <li>E-commerce Integration</li>
-                        </ul>
-                        <a href="frontend/pages/wordpress-demo.html" class="service-cta">View Demo</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Website Maintenance</h3>
-                        <p>Ongoing support and maintenance to keep your website secure, updated, and performing at its best.</p>
-                        <ul class="service-features">
-                            <li>Security Updates</li>
-                            <li>Performance Monitoring</li>
-                            <li>Content Updates</li>
-                            <li>Technical Support</li>
-                        </ul>
-                        <a href="frontend/pages/maintenance-demo.html" class="service-cta">View Demo</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <h3>Video Downloader</h3>
-                        <p>Download videos from YouTube and Facebook easily and safely with our free online tool.</p>
-                        <ul class="service-features">
-                            <li>YouTube Downloads</li>
-                            <li>Facebook Downloads</li>
-                            <li>Multiple Quality Options</li>
-                            <li>Fast & Secure</li>
-                        </ul>
-                        <a href="frontend/pages/video-downloader.html" class="service-cta">Try Downloader</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <h3>Landing Page Builder</h3>
-                        <p>Create stunning landing pages with our drag-and-drop builder. No coding required - design, customize, and publish instantly.</p>
-                        <ul class="service-features">
-                            <li>Drag & Drop Interface</li>
-                            <li>Pre-built Templates</li>
-                            <li>Real-time Preview</li>
-                            <li>One-click Publishing</li>
-                        </ul>
-                        <a href="frontend/pages/landing-builder.html" class="service-cta">Try Builder Now</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>E-Commerce Demo</h3>
-                        <p>Modern e-commerce website demo showcasing product listings, shopping cart, and checkout functionality.</p>
-                        <ul class="service-features">
-                            <li>Product Catalog</li>
-                            <li>Shopping Cart</li>
-                            <li>Search & Filters</li>
-                            <li>Checkout Process</li>
-                        </ul>
-                        <a href="frontend/pages/ecommerce-demo.html" class="service-cta">View Demo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>My Portfolio</h2>
-                    <p>Showcasing my latest web design and development projects</p>
-                </div>
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
-                    <button class="filter-btn" data-filter="landing">Landing Pages</button>
-                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-                    <button class="filter-btn" data-filter="corporate">Corporate</button>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item" data-category="wordpress">
-                        <div class="portfolio-image">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>E-commerce WordPress Site</h3>
-                            <p>Custom WooCommerce theme with advanced product filtering and payment integration.</p>
-                            <div class="portfolio-stats">
-                                <span>WordPress</span>
-                                <span>WooCommerce</span>
-                                <span>Custom Theme</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item" data-category="landing">
-                        <div class="portfolio-image">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>SaaS Landing Page</h3>
-                            <p>High-converting landing page for a SaaS product with 40% conversion rate improvement.</p>
-                            <div class="portfolio-stats">
-                                <span>Landing Page</span>
-                                <span>A/B Testing</span>
-                                <span>High Conversion</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item" data-category="corporate">
-                        <div class="portfolio-image">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Corporate Website</h3>
-                            <p>Modern corporate website with custom WordPress theme and advanced content management.</p>
-                            <div class="portfolio-stats">
-                                <span>WordPress</span>
-                                <span>Custom Theme</span>
-                                <span>Corporate</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item" data-category="landing">
-                        <div class="portfolio-image">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Course Landing Page</h3>
-                            <p>Educational platform landing page with integrated payment system and student dashboard.</p>
-                            <div class="portfolio-stats">
-                                <span>Landing Page</span>
-                                <span>Payment Integration</span>
-                                <span>Education</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item" data-category="ecommerce">
-                        <div class="portfolio-image">
-                            <i class="fas fa-tshirt"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Fashion E-commerce</h3>
-                            <p>Custom fashion e-commerce site with advanced product catalog and mobile-first design.</p>
-                            <div class="portfolio-stats">
-                                <span>E-commerce</span>
-                                <span>Mobile-First</span>
-                                <span>Fashion</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item" data-category="wordpress">
-                        <div class="portfolio-image">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>News Magazine Theme</h3>
-                            <p>Custom WordPress theme for a digital magazine with advanced content management features.</p>
-                            <div class="portfolio-stats">
-                                <span>WordPress</span>
-                                <span>Custom Theme</span>
-                                <span>News</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog Section -->
-        <section id="blog" class="blog-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>সর্বশেষ আর্টিকেল ও অন্তর্দৃষ্টি</h2>
-                    <p>ওয়েব ডিজাইন, ডেভেলপমেন্ট এবং ডিজিটাল মার্কেটিং ট্রেন্ড নিয়ে জ্ঞান শেয়ার করছি</p>
-                </div>
-                <div class="blog-grid">
-                    <article class="blog-card featured">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80" alt="Website Branding" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">ব্র্যান্ডিং</span>
-                                <span class="blog-date">জানুয়ারি ২০, ২০২৪</span>
-                            </div>
-                            <h3>🌐 নিজের ওয়েবসাইট ব্র্যান্ড করুন: সফল অনলাইন উপস্থিতির শক্তিশালী কৌশল</h3>
-                            <p>বর্তমানে আপনি যদি ই-কমার্স করেন, সেবা ভিত্তিক ব্যবসা চালান, পোর্টফোলিও তৈরি করেন বা কনটেন্ট ক্রিয়েটর হন — নিজের একটি ওয়েবসাইট থাকা প্রয়োজন। তবু একটি ওয়েবসাইট বানানোই যথেষ্ট নয়, সেটিকে একটি শক্তিশালী ব্র্যান্ডে পরিণত করাই মূল লক্ষ্য হওয়া উচিত। একটি ব্র্যান্ডেড ওয়েবসাইটই পারে আপনাকে প্রতিযোগিতামূলক অনলাইন দুনিয়ায় টিকে থাকতে এবং উন্নতি করতে।</p>
-                            <div class="blog-tags">
-                                <span class="tag">ব্র্যান্ডিং</span>
-                                <span class="tag">ওয়েবসাইট</span>
-                                <span class="tag">মার্কেটিং</span>
-                            </div>
-                            <a href="frontend/pages/website-branding-article.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="WordPress Development" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">WordPress</span>
-                                <span class="blog-date">জানুয়ারি ১৫, ২০২৪</span>
-                            </div>
-                            <h3>প্রতিটি ওয়েবসাইটের জন্য ১০টি অপরিহার্য WordPress প্লাগইন</h3>
-                            <p>আপনার ওয়েবসাইটের কার্যকারিতা, নিরাপত্তা এবং পারফরম্যান্স বাড়াতে সাহায্য করবে এমন অপরিহার্য WordPress প্লাগইনগুলি আবিষ্কার করুন। SEO অপটিমাইজেশন থেকে নিরাপত্তা শক্তিশালীকরণ পর্যন্ত, এই প্লাগইনগুলি যেকোনো WordPress সাইটের জন্য অপরিহার্য।</p>
-                            <div class="blog-tags">
-                                <span class="tag">WordPress</span>
-                                <span class="tag">প্লাগইন</span>
-                                <span class="tag">SEO</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Mobile-First Design" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">ওয়েব ডিজাইন</span>
-                                <span class="blog-date">জানুয়ারি ১২, ২০২৪</span>
-                            </div>
-                            <h3>মোবাইল-ফার্স্ট ডিজাইন: কেন এটি SEO এর জন্য গুরুত্বপূর্ণ</h3>
-                            <p>জানুন কেন মোবাইল-ফার্স্ট ডিজাইন শুধু একটি ট্রেন্ড নয়, বরং আধুনিক ওয়েবসাইটের জন্য একটি প্রয়োজনীয়তা। আবিষ্কার করুন এটি কীভাবে আপনার SEO র‍্যাঙ্কিং এবং ব্যবহারকারীর অভিজ্ঞতাকে প্রভাবিত করে।</p>
-                            <div class="blog-tags">
-                                <span class="tag">মোবাইল</span>
-                                <span class="tag">SEO</span>
-                                <span class="tag">UX</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Landing Page Optimization" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">ল্যান্ডিং পেজ</span>
-                                <span class="blog-date">জানুয়ারি ১০, ২০২৪</span>
-                            </div>
-                            <h3>ল্যান্ডিং পেজ অপটিমাইজেশন: ৫টি প্রমাণিত কৌশল</h3>
-                            <p>সর্বোচ্চ রূপান্তরের জন্য আপনার ল্যান্ডিং পেজগুলি অপটিমাইজ করার জন্য পাঁচটি প্রমাণিত কৌশল অন্বেষণ করুন। আকর্ষণীয় শিরোনাম থেকে কৌশলগত CTA পর্যন্ত, জানুন কী একটি ল্যান্ডিং পেজকে সফল করে তোলে।</p>
-                            <div class="blog-tags">
-                                <span class="tag">রূপান্তর</span>
-                                <span class="tag">ল্যান্ডিং পেজ</span>
-                                <span class="tag">CRO</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Modern CSS Techniques" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">ডেভেলপমেন্ট</span>
-                                <span class="blog-date">জানুয়ারি ৮, ২০২৪</span>
-                            </div>
-                            <h3>উত্তম পারফরম্যান্সের জন্য আধুনিক CSS কৌশল</h3>
-                            <p>আধুনিক CSS কৌশল আবিষ্কার করুন যা আপনার ওয়েবসাইটের পারফরম্যান্স উল্লেখযোগ্যভাবে উন্নত করতে পারে। CSS Grid থেকে কাস্টম প্রপার্টি পর্যন্ত, দক্ষ এবং বজায় রাখা যায় এমন CSS লেখার কৌশল শিখুন।</p>
-                            <div class="blog-tags">
-                                <span class="tag">CSS</span>
-                                <span class="tag">পারফরম্যান্স</span>
-                                <span class="tag">ফ্রন্টএন্ড</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Technical SEO" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">SEO</span>
-                                <span class="blog-date">জানুয়ারি ৫, ২০২৪</span>
-                            </div>
-                            <h3>২০২৪ সালের জন্য টেকনিক্যাল SEO চেকলিস্ট</h3>
-                            <p>আপনার ওয়েবসাইট সার্চ ইঞ্জিনের জন্য অপটিমাইজ করা হয়েছে তা নিশ্চিত করার জন্য একটি বিস্তৃত টেকনিক্যাল SEO চেকলিস্ট। পেজ স্পিড থেকে স্ট্রাকচার্ড ডেটা পর্যন্ত সবকিছু কভার করুন।</p>
-                            <div class="blog-tags">
-                                <span class="tag">SEO</span>
-                                <span class="tag">টেকনিক্যাল</span>
-                                <span class="tag">২০২৪</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Color Psychology" loading="lazy">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">ডিজাইন</span>
-                                <span class="blog-date">জানুয়ারি ৩, ২০২৪</span>
-                            </div>
-                            <h3>ওয়েব ডিজাইনে রঙের মনোবিজ্ঞান</h3>
-                            <p>রঙগুলি কীভাবে ব্যবহারকারীর আচরণ এবং আবেগকে প্রভাবিত করে তা বুঝুন। আপনার ব্যবসার লক্ষ্য অর্জনের জন্য আপনার ওয়েবসাইটের জন্য সঠিক রঙের প্যালেট বেছে নেওয়ার কৌশল শিখুন।</p>
-                            <div class="blog-tags">
-                                <span class="tag">ডিজাইন</span>
-                                <span class="tag">রঙ</span>
-                                <span class="tag">মনোবিজ্ঞান</span>
-                            </div>
-                            <a href="frontend/pages/all-articles.html" class="read-more">সম্পূর্ণ আর্টিকেল পড়ুন <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="blog-cta">
-                    <a href="frontend/pages/all-articles.html" class="view-all-blogs">সব আর্টিকেল দেখুন</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to start your next web project? Let's discuss how I can help bring your vision to life.</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>monirul4213@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <p>01957625659</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Mirpur 1, Dhaka, Bangladesh</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Availability</h4>
-                                <p>Available for new projects</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="subject" placeholder="Project Type">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-code"></i>
-                    <span>WebCraft Studio</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
-                    <a href="frontend/pages/admin-panel.html">Admin Panel</a>
-                    <a href="frontend/pages/article-dashboard.html">Article Dashboard</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fab fa-behance"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 WebCraft Studio. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="frontend/js/script.js"></script>
-    <!-- Socket.IO CDN -->
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-    <script src="frontend/js/chat.js"></script>
+  <footer>
+    &copy; 2025 Your Brand Name. All rights reserved.
+  </footer>
 </body>
-</html> 
+</html>
