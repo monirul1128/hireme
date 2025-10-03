@@ -3,86 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Product – Landing Page</title>
-  <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #fff; color: #222; }
-    .hero { padding: 60px 20px 30px 20px; text-align: center; background: #f6f7fb; }
-    .hero h1 { font-size: 2.5em; margin-bottom: 10px; }
-    .hero p { font-size: 1.2em; color: #555; }
-    .hero img { max-width: 320px; width: 100%; margin: 30px 0; border-radius: 10px; box-shadow: 0 2px 10px #0001; }
-    .cta-btn { background: #ff6600; color: #fff; padding: 16px 42px; font-size: 1.3em; border: none; border-radius: 6px; text-decoration: none; margin-top: 25px; display: inline-block; transition: background 0.2s; }
-    .cta-btn:hover { background: #e25500; }
-    .features { max-width: 600px; margin: 40px auto; padding: 0 20px; }
-    .features ul { list-style: none; padding: 0; }
-    .features li { margin-bottom: 18px; font-size: 1.1em; }
-    .testimonials { background: #fffbe7; padding: 40px 20px; text-align: center; }
-    .testimonials blockquote { font-size: 1.15em; color: #333; margin: 0 auto 18px auto; border-left: 4px solid #ff6600; padding-left: 12px; max-width: 420px; }
-    .buy-section { text-align: center; padding: 48px 20px 30px 20px; background: #eafaf1; }
-    .buy-section h2 { margin-bottom: 12px; }
-    .faq { max-width: 600px; margin: 35px auto; padding: 0 20px; }
-    .faq details { margin-bottom: 14px; background: #f6f7fb; padding: 10px 18px; border-radius: 6px; }
-    footer { text-align: center; padding: 22px 10px; color: #aaa; font-size: 1em; background: #fafbfc; margin-top: 40px;}
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2em; }
-      .cta-btn { font-size: 1em; padding: 12px 24px;}
-    }
-  </style>
+  <title>Digital Service Shop – Web, SEO, Branding</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./frontend/css/styles.css">
 </head>
 <body>
-  <section class="hero">
-    <h1>Amazing Product Name</h1>
-    <p>Revolutionize your daily life with our exclusive eCommerce product!</p>
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Product Image">
-    <br>
-    <a href="#buy" class="cta-btn">Buy Now</a>
-  </section>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="#home"><i class="fa-solid fa-bolt"></i>Digital Service Shop</a>
+      </div>
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <button class="cta-button hero-cta" onclick="window.open('https://wa.me/8801957625659?text=Hi!%20I%20need%20digital%20services','_blank')">WhatsApp Quote</button>
+      </div>
+      <div class="mobile-menu-toggle" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#home">Home</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#shop">Shop</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-cta-button" onclick="window.open('https://wa.me/8801957625659?text=Hi!%20I%20need%20digital%20services','_blank')">WhatsApp Quote</button>
+    </div>
+  </header>
 
-  <section class="features">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>✅ Feature 1: Top-quality materials for durability</li>
-      <li>✅ Feature 2: Modern design fits any lifestyle</li>
-      <li>✅ Feature 3: Fast, free worldwide shipping</li>
-    </ul>
-  </section>
+  <main class="main-content">
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hire a Team for Web, SEO, and Branding</h1>
+          <p class="hero-subtitle">Launch fast. Look professional. Get found.</p>
+          <p class="hero-description">We build high‑converting websites, boost search rankings, and craft brand visuals and content for service businesses and creators.</p>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-number">100+ </span><span class="stat-label">Projects</span></div>
+            <div class="stat"><span class="stat-number">4.9★</span><span class="stat-label">Client Rating</span></div>
+            <div class="stat"><span class="stat-number">7d</span><span class="stat-label">Typical Delivery</span></div>
+          </div>
+          <div class="hero-buttons">
+            <a href="#services" class="hero-cta primary">Explore Services</a>
+            <a href="#pricing" class="hero-cta secondary">View Pricing</a>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-image"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Digital Service Shop</h3>
+          <p class="specialty">Web Design • SEO • Branding • Content</p>
+          <div class="social-links">
+            <a href="https://wa.me/8801957625659" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <blockquote>
-      “Absolutely love this product! Fast shipping and great quality. Will buy again!”<br>
-      – <strong>Jane S.</strong>
-    </blockquote>
-    <blockquote>
-      “Exceeded my expectations. Highly recommend to anyone!”<br>
-      – <strong>John D.</strong>
-    </blockquote>
-  </section>
+    <section id="shop" class="portfolio-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Shop Digital Services</h2>
+          <p>Choose a service category and tap Order Now to chat on WhatsApp.</p>
+        </div>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="seo">SEO</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="content">Content</button>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="web">
+            <div class="portfolio-image"><i class="fa-solid fa-rocket"></i></div>
+            <div class="portfolio-content">
+              <h3>Landing Page (Starter)</h3>
+              <p>High‑converting one‑page site with responsive design.</p>
+              <div class="portfolio-stats"><span>$99</span><span>3–5 days</span><span>Basic SEO</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Landing%20Page%20(Starter)">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="web">
+            <div class="portfolio-image"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="portfolio-content">
+              <h3>Business Website</h3>
+              <p>Multi‑page website with blog and lead forms.</p>
+              <div class="portfolio-stats"><span>$299</span><span>5–10 days</span><span>SEO setup</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Business%20Website">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="seo">
+            <div class="portfolio-image"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <div class="portfolio-content">
+              <h3>SEO Starter</h3>
+              <p>On‑page optimization for 5 pages + quick wins.</p>
+              <div class="portfolio-stats"><span>$99</span><span>1 week</span><span>Report</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20SEO%20Starter">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="seo">
+            <div class="portfolio-image"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="portfolio-content">
+              <h3>SEO Growth (Monthly)</h3>
+              <p>Ongoing SEO + speed improvements and tracking.</p>
+              <div class="portfolio-stats"><span>$99/mo</span><span>Monthly</span><span>Reports</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20SEO%20Growth%20(Monthly)">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <div class="portfolio-image"><i class="fa-solid fa-pen-nib"></i></div>
+            <div class="portfolio-content">
+              <h3>Logo Design</h3>
+              <p>2 concepts, 2 revisions, web and print files.</p>
+              <div class="portfolio-stats"><span>$79</span><span>3–5 days</span><span>Source files</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Logo%20Design">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <div class="portfolio-image"><i class="fa-solid fa-palette"></i></div>
+            <div class="portfolio-content">
+              <h3>Brand Kit</h3>
+              <p>Logo, colors, typography, and social banners.</p>
+              <div class="portfolio-stats"><span>$149</span><span>5–7 days</span><span>Guidelines</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Brand%20Kit">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="content">
+            <div class="portfolio-image"><i class="fa-solid fa-feather"></i></div>
+            <div class="portfolio-content">
+              <h3>Website Copy</h3>
+              <p>Conversion‑focused content for up to 5 pages.</p>
+              <div class="portfolio-stats"><span>$99</span><span>3–7 days</span><span>SEO ready</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Website%20Copy">Order Now</a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="content">
+            <div class="portfolio-image"><i class="fa-solid fa-newspaper"></i></div>
+            <div class="portfolio-content">
+              <h3>Blog Setup + 3 Posts</h3>
+              <p>Blog setup with 3 SEO‑optimized articles.</p>
+              <div class="portfolio-stats"><span>$129</span><span>1–2 weeks</span><span>SEO ready</span></div>
+              <a class="service-cta" target="_blank" href="https://wa.me/8801957625659?text=I%20want%20to%20order%20Blog%20Setup%20%2B%203%20Posts">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="buy-section" id="buy">
-    <h2>Ready to Get Yours?</h2>
-    <p>Order today and receive an exclusive 10% discount – limited time only!</p>
-    <a href="#" class="cta-btn">Buy Now for $49.99</a>
-    <p style="margin-top:18px;color:#666;">(Secure checkout via your favorite payment method)</p>
-  </section>
 
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>How fast is shipping?</summary>
-      <div>We ship within 1 business day. Delivery usually takes 3–7 days worldwide.</div>
-    </details>
-    <details>
-      <summary>Do you offer returns?</summary>
-      <div>Yes! We offer a 30-day money-back guarantee, no questions asked.</div>
-    </details>
-    <details>
-      <summary>Is my payment secure?</summary>
-      <div>Absolutely. All transactions are encrypted and processed by trusted gateways.</div>
-    </details>
-  </section>
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Tell us about your project and preferred timeline.</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-details">
+                <h4>WhatsApp</h4>
+                <p>+880 1957-625-659</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>monirul4213@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Mirpur 1, Dhaka, Bangladesh</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form class="contact-form" onsubmit="return false;">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+              </div>
+              <button class="submit-btn cta-button" onclick="window.open('https://wa.me/8801957625659?text=Hi!%20I%20have%20a%20project%20to%20discuss','_blank')">Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    &copy; 2025 Your Brand Name. All rights reserved.
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><i class="fa-solid fa-bolt"></i> Digital Service Shop</div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/8801957625659" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Digital Service Shop. All rights reserved.</div>
+    </div>
   </footer>
+
+  <script src="./frontend/js/script.js"></script>
 </body>
 </html>
