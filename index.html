@@ -229,5 +229,47 @@
   </footer>
 
   <script src="./frontend/js/script.js"></script>
+  <script>
+    (function(){
+      const endpoint = '/.netlify/functions/fb_capi';
+      function sendEvent(evt){
+        try{
+          fetch(endpoint,{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(evt)
+          }).catch(()=>{});
+        }catch(e){}
+      }
+      // PageView
+      const pageView = {
+        event_name:'PageView',
+        action_source:'website',
+        event_source_url: location.href,
+        event_id: 'pv_'+Date.now()
+      };
+      sendEvent(pageView);
+
+      // Order Now clicks
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('a.service-cta');
+        if(!a) return;
+        if(!/Order Now/i.test(a.textContent)) return;
+        const card = a.closest('.portfolio-content');
+        const name = card ? (card.querySelector('h3')?.textContent||'Service') : 'Service';
+        const href = a.getAttribute('href');
+        e.preventDefault();
+        const ev = {
+          event_name:'Contact',
+          action_source:'website',
+          event_source_url: location.href,
+          event_id: 'order_'+Date.now(),
+          custom_data:{ content_name: name }
+        };
+        sendEvent(ev);
+        setTimeout(()=>{ window.open(href, a.target||'_self'); }, 150);
+      });
+    })();
+  </script>
 </body>
 </html>
